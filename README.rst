@@ -10,7 +10,7 @@ used to be part of ckanext-spatial_.
 **Note:** This is a work in progress, if you can help with `OpenLayers`_ or `Leaflet`_ development,
 check the `Issues` section for what needs to be done or add a new issue.
 
-
+The original ckanext-geoview version is hosted on github.com/ckan. The current version is customized for Taiwan CDC Open Data Portal.
 
 ------------
 Installation
@@ -22,20 +22,35 @@ To install ckanext-geoview on a production site:
 
      source /usr/lib/ckan/default/bin/activate
 
-2. Install the ckanext-geoview Python package into your virtual environment::
+2. Clone the ckanext-geoview from github, for example::
+   
+     cd /usr/lib/ckan/default/src/ckan/ckanext/
+     git clone https://github.com/jiankaiwang/ckanext-geoview.git
 
+
+3. Install the ckanext-geoview Python package into your virtual environment::
+
+     cd /usr/lib/ckan/default/src/ckan/ckanext/ckanext-geoview/
      pip install ckanext-geoview
 
-3. Add the relevant plugins to the ``ckan.plugins`` setting in your CKAN
+4. Add the relevant plugins to the ``ckan.plugins`` setting in your CKAN
    config file (by default the config file is located at
    ``/etc/ckan/default/production.ini``). Check `Available plugins`_ to see which
    ones are available and if they require further configuration.
 
-4. Add the ``resource_proxy`` plugin to the ``ckan.plugins`` setting.
+5. Add the ``resource_proxy`` plugin to the ``ckan.plugins`` setting.
 
-5. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
+6. Restart CKAN. For example if you've deployed CKAN with Apache on Ubuntu::
 
      sudo service apache2 reload
+
+   If you've deployed CKAN with uwsgi::
+
+     uwsgi --ini-paste /etc/ckan/default/production.ini
+
+   If you've create a ckan.service::
+
+     sudo systemctl restart ckan.service
 
 ------------------------
 Development Installation
@@ -46,7 +61,7 @@ To install ckanext-geoview for development:
 1. Clone the source::
 
     cd /usr/lib/ckan/default/src
-    git clone https://github.com/ckan/ckanext-geoview.git
+    git clone https://github.com/jiankaiwang/ckanext-geoview.git
 
 2. Activate your CKAN virtual environment, for example::
 
@@ -191,41 +206,9 @@ http://docs.ckan.org/projects/ckanext-spatial/en/latest/map-widgets.html
 .. _widgets: http://docs.ckan.org/projects/ckanext-spatial/en/latest/spatial-search.html#spatial-search-widget
 
 
------------------------------------
-Registering ckanext-geoview on PyPI
------------------------------------
-
-ckanext-geoview should be availabe on PyPI as
-https://pypi.python.org/pypi/ckanext-geoview. If that link doesn't work, then
-you can register the project on PyPI for the first time by following these
-steps:
-
-1. Create a source distribution of the project::
-
-     python setup.py sdist
-
-2. Register the project::
-
-     python setup.py register
-
-3. Upload the source distribution to PyPI::
-
-     python setup.py sdist upload
-
-4. Tag the first release of the project on GitHub with the version number from
-   the ``setup.py`` file. For example if the version number in ``setup.py`` is
-   0.0.1 then do::
-
-       git tag 0.0.1
-       git push --tags
-
-
 ------------------------------------------
 Releasing a new version of ckanext-geoview
 ------------------------------------------
-
-ckanext-geoview is availabe on PyPI as https://pypi.python.org/pypi/ckanext-geoview.
-To publish a new version to PyPI follow these steps:
 
 1. Update the version number in the ``setup.py`` file.
    See `PEP 440 <http://legacy.python.org/dev/peps/pep-0440/#public-version-identifiers>`_

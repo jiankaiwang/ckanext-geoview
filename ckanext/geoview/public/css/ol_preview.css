@@ -1,6 +1,6 @@
  #map{
   width: 100%;
-  height: 600px;
+  height: 450px;
 }
 
  #info {
@@ -46,6 +46,9 @@
 
      -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+     
+     /* hidden box */
+     visibility: hidden;
  }
 
  #data-preview .olControlLayerSwitcher {
@@ -83,3 +86,9 @@
  #data-preview .dataLayersDiv .labelSpan {
      font-size: 80%;
  }
+
+@media only screen and (max-width: 767px) {
+ #map{
+  width: 100%;
+ }
+}

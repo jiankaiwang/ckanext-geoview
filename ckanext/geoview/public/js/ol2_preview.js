@@ -239,12 +239,12 @@
                             'See http://www.mapbox.com/developers/api-overview/ for details';
                     }
 
-                    urls = ['//a.tiles.mapbox.com/v4/' + mapConfig['mapbox.map_id'] + '/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
-                                '//b.tiles.mapbox.com/v4/' + mapConfig['mapbox.map_id'] + '/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
-                                '//c.tiles.mapbox.com/v4/' + mapConfig['mapbox.map_id'] + '/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
-                                '//d.tiles.mapbox.com/v4/' + mapConfig['mapbox.map_id'] + '/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
+                    urls = ['//a.tiles.mapbox.com/v4/mapbox.outdoors/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
+                                '//b.tiles.mapbox.com/v4/mapbox.outdoors/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
+                                '//c.tiles.mapbox.com/v4/mapbox.outdoors/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
+                                '//d.tiles.mapbox.com/v4/mapbox.outdoors/${z}/${x}/${y}.png?access_token=' + mapConfig['mapbox.access_token'],
                     ];
-                    attribution = '<a href="https://www.mapbox.com/about/maps/" target="_blank">&copy; Mapbox &copy; OpenStreetMap </a> <a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a>';
+                    attribution = 'Mapbox &copy; OpenStreetMap';
                     baseMapLayer = new OpenLayers.Layer.XYZ('MapBox', urls, {
                         sphericalMercator: true,
                         wrapDateLine: true,
