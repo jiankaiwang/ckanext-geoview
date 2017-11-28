@@ -10,7 +10,7 @@ used to be part of ckanext-spatial_.
 **Note:** This is a work in progress, if you can help with `OpenLayers`_ or `Leaflet`_ development,
 check the `Issues` section for what needs to be done or add a new issue.
 
-The original ckanext-geoview version is hosted on github.com/ckan. The current version is customized for Taiwan CDC Open Data Portal.
+**The original ckanext-geoview version is hosted on github.com/ckan. The current version is customized for Taiwan CDC Open Data Portal.**
 
 ------------
 Installation
@@ -31,7 +31,7 @@ To install ckanext-geoview on a production site:
 3. Install the ckanext-geoview Python package into your virtual environment::
 
      cd /usr/lib/ckan/default/src/ckan/ckanext/ckanext-geoview/
-     pip install ckanext-geoview
+     pip install .
 
 4. Add the relevant plugins to the ``ckan.plugins`` setting in your CKAN
    config file (by default the config file is located at
